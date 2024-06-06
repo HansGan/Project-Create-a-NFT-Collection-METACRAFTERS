@@ -13,32 +13,39 @@ const NFT_collection = [];
 // this function will take in some values as parameters, create an
 // NFT object using the parameters passed to it for its metadata, 
 // and store it in the variable above.
-function mintNFT (_name, _color, _value,_popularity) {
+function mintNFT (_name, _color, _value,_popularity, _NFTArray) {
     const NFT = {
         "name":_name,
         "color":_color,
         "value":_value,
         "popularity":_popularity
     }
-    NFT_collection.push(NFT);
+    _NFTArray.push(NFT);
 }
 
 // create a "loop" that will go through an "array" of NFT's
 // and print their metadata with console.log()
-function listNFTs () {
-    for(let i=0;i<NFT_collection.length;i++){
-        console.log(NFT_collection[i]);
+function listNFTs (_NFTArray) {
+    console.log("----------------------------")
+    for(let i=0;i<_NFTArray.length;i++){
+        console.log("NFT ID: "+ (i+1))
+        console.log("NAME: " + _NFTArray[i].name);
+        console.log("COLOR: " + _NFTArray[i].color);
+        console.log("VALUE: " + _NFTArray[i].value);
+        console.log("POPULARITY: " + _NFTArray[i].popularity);
+        console.log("----------------------------")
     }
 }
 
 // print the total number of NFTs we have minted to the console
-function getTotalSupply() {
-    console.log(NFT_collection.length);
+function getTotalSupply(_NFTArray) {
+    console.log("----------------------------")
+    console.log("NFTs in Total: " + _NFTArray.length);
 }
 
 // call your functions below this line
-mintNFT("bear","red","1M","Super Popular");
-mintNFT("tiger","yellow","500k","Popular");
-mintNFT("turle","blue","100k","Known");
-listNFTs();
-getTotalSupply();
+mintNFT("bear","red","1M","Super Popular",NFT_collection);
+mintNFT("tiger","yellow","500k","Popular",NFT_collection);
+mintNFT("turle","blue","100k","Known",NFT_collection);
+getTotalSupply(NFT_collection);
+listNFTs(NFT_collection);
