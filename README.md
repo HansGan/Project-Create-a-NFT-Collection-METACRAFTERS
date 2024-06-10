@@ -15,6 +15,4 @@ Simply run the code in any IDE, it must display the each NFT object and
 their corresponding attributes.
 
 ## Authors
-Contributors names and contact info
-Hans Matthew N. Gan
-(hansmatthewniervagan@gmail.com)
+Hans Matthew N. Gan (hansmatthewniervagan@gmail.com)
